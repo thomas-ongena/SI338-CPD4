@@ -1,0 +1,180 @@
+/* --- CSS Color Variables --- */
+/* Using the exact same variables from index.html for consistency */
+:root {
+    --primary-blue: #93c5fd; 
+    --accent-sky: #1e293b;
+    --text-dark: #f1f5f9;  
+    --text-light: #0f172a; 
+    --bg-grey: #020617;    
+    --nav-bg: #1e293b;
+    --link-color: #60a5fa;
+    
+    /* Standardized spacing units */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+/* --- Base Styles --- */
+html, body {
+    /* Matches the background and text color of your home page */
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Ensure this font is linked in your HTML */
+    width: 100%;
+}
+
+/* Prevent horizontal overflow while maintaining sticky nav functionality */
+main, section, header, footer {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* --- 3. Link Styling --- */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: skyblue;
+    text-decoration: underline;
+}
+
+#athlete-nav .nav-container {
+    display: flex;
+    flex-direction: column; /* Stacks title and link vertically for centering */
+    align-items: center;    /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically if height is present */
+    text-align: center;
+    gap: 10px;              /* Adds space between the title and the link */
+    padding: 15px 0;
+}
+
+#athlete-nav .nav-title{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#athlete-nav .nav-link{
+    font-size: 20px;
+}
+
+#athlete-header h2{
+    padding-left: 2%;
+}
+
+#athlete-header .athlete-photo{
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+}
+
+.athlete-info {
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    font-weight: bold;
+    align-items: center; /* Centers under the image */
+    text-align: center;
+}
+
+.athlete-records {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border-radius: 8px 8px 8px 8px; /* Rounds all corners */
+    min-width: 250px;
+}
+
+#results-table {
+    width: 95%;
+    margin: 20px auto;
+    border-spacing: 0 5px;    /* Adds a vertical gap between entries */
+}
+
+/* Style for the individual race rows */
+#results-table tbody tr {
+    background-color: var(--accent-sky); /* Lighter blue background */
+    border: 2px solid var(--primary-blue); /* Entry border */
+}
+
+/* Giving each cell a border */
+#results-table td {
+    padding: 10px;
+    border-top: 1px solid var(--primary-blue);
+    border-bottom: 1px solid var(--primary-blue);
+    text-align: center;
+}
+
+/* Rounds the corners of the entries */
+#results-table td:first-child {
+    border-left: 1px solid var(--primary-blue);
+    border-radius: 8px 0 0 8px;
+}
+
+#results-table td:last-child {
+    border-right: 1px solid var(--primary-blue);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Simple styling for the headers to match */
+#results-table th {
+    padding: 10px;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Photo Gallery */ 
+
+.gallery-grid {
+    display: grid;
+    /* Creates as many columns as fit, at least 150px wide each */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--accent-sky);
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Prevents images from stretching/squishing */
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.10);
+}
+
+/* Performance Graph */ 
+
+#performance-graph {
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-lg);
+    text-align: center;
+
+}
+
+#performance-graph img:hover {  /* Makes it easier to read when tapped on */
+    transform: scale(1.4);
+    cursor: zoom-in;
+}
